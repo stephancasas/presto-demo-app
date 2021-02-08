@@ -4,9 +4,6 @@
 
 <p align="center"><h2 align="center">Snowblade Demo App <i>&mdash; Powered by <a href="https://github.com/alpinejs/alpine">Alpine JS</a> and <a href="https://github.com/ryangjchandler/spruce">Spruce</a>.</i></h2></p>
 
-<p align="center"><h3 align="center"></h3></p>
-
-
 The Snowblade demo application, Expresslane, is a diluted mock-up of an LDAP user manager that you might find in an enterprise environment. Its purpose is not to fulfill an operational need, but to showcase the componentization capabilities of Snowblade working in-tandem with Alpine JS and Spruce.
 
 Alpine developers can observe how to effectively leverage Snowblade's component-oriented and markup-focused characteristics to rapidly build application frontends.
@@ -14,6 +11,10 @@ Alpine developers can observe how to effectively leverage Snowblade's component-
 > ### A Note From the Developer:
 > 
 > I created this application as a variant of a project that is currently being used in production. Each time I review my work, I find better ways to create with Snowblade, and new ways to express component flexibility. There is no "right" way to do something, though some methods are more efficient than others. The intention of Snowblade is to make your projects easier to manage. Leverage the library however it suits you best, and I can't wait to hear your feedback.
+
+<p>&nbsp;</p>
+
+<p align="center"><img src="https://get.stephancasas.com/static/sb-demo-video.gif"></p>
 
 ## Build
 
