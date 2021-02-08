@@ -1,0 +1,8 @@
+<meta snowblade name="NavItem" ::label />
+
+<span
+  x-bind:class="`${ $store.root.view === '{{ label }}'.toLowerCase() ? 'text-gray-800' : 'text-gray-300'} hover:text-gray-800 text-sm font-medium select-none cursor-pointer`"
+  x-on:click="$store.root.view = '{{ label }}'.toLowerCase()"
+>
+  {{ label }}
+</span>

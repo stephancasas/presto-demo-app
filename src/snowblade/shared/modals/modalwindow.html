@@ -1,0 +1,8 @@
+<meta snowblade name="ModalWindow" ::title ::width="1/3" />
+
+<div class="flex flex-col w-{{ width }} mx-auto bg-white rounded-lg shadow-lg">
+  <div class="h-12 flex items-center border-b px-4 py-7">
+    <div class="text-xl font-semibold">{{ title }}</div>
+  </div>
+  <slot snowblade></slot>
+</div>

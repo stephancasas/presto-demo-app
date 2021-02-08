@@ -1,0 +1,10 @@
+<meta snowblade name="UserThumbnail" $$provides $$reserves="x-for" />
+
+<div $$accepts $$rejects="x-text x-html">
+  <div class="flex items-center h-12 mx-2 hover:bg-gray-100 rounded-md select-none cursor-pointer">
+    <div class="h-full w-1 mr-2 rounded-full bg-gray-200 relative">
+      <div class="absolute inset-0 h-full w-1 mr-2 rounded-full bg-green-300" $$exposes="selected"></div>
+    </div>
+    <span $$accepts="x-text x-html"></span>
+  </div>
+</div>

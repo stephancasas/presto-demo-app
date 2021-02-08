@@ -1,0 +1,6 @@
+<meta snowblade name="Modals" />
+
+<ModalStaging x-show="$store.root.modal !== ''">
+  <SettingsAlertModal $$wrap="template" x-if="$store.root.modal === 'settings_alert'"></SettingsAlertModal>
+  <UserDeleteModal $$wrap="template" x-if="$store.root.modal === 'user_delete'"></UserDeleteModal>
+</ModalStaging>

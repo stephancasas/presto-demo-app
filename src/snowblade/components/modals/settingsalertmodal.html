@@ -1,0 +1,12 @@
+<meta snowblade name="SettingsAlertModal" />
+
+<ModalWindow ::title="Alert">
+  <div class="flex items-center">
+    <div class="p-4">Your access privileges do not permit this operation.</div>
+  </div>
+  <div class="flex p-3 border-t">
+    <div class="flex items-center ml-auto space-x-3">
+      <BasicButton ::color="gray" ::label="OK" @click="$store.root.modal = ''"></BasicButton>
+    </div>
+  </div>
+</ModalWindow>

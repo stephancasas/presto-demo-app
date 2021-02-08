@@ -1,0 +1,10 @@
+<meta snowblade name="App" />
+
+<div x-data x-init="$store.users.fetchUsers()" class="h-screen w-screen flex flex-col">
+  <Modals></Modals>
+
+  <Navigation></Navigation>
+
+  <Users $$wrap="template" x-if="$store.root.view === 'users'"></Users>
+  <Settings $$wrap="template" x-if="$store.root.view === 'settings'"></Settings>
+</div>

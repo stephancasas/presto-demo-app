@@ -1,0 +1,43 @@
+<meta snowblade name="DropdownHelper" />
+
+<script>
+  window.snowbladeActiveDropdown = undefined;
+
+  window.addEventListener('click', (e) => {
+    const dropdown = window.snowbladeActiveDropdown;
+    if (typeof dropdown === 'undefined') return;
+    const button = dropdown.querySelector('button');
+    const list = dropdown.querySelector('.dropdown-list');
+
+    list.classList.add('hidden');
+
+    // TODO: should probably extract these styles as global snowblade props
+    button.classList.add('bg-gray-100');
+    button.classList.remove('ring-1');
+    button.classList.remove('bg-white');
+    button.classList.remove('ring-gray-300');
+    window.snowbladeActiveDropdown = undefined;
+  });
+
+  document.addEventListener('DOMNodeInserted', (e) => {
+    // FIXME: do not use spread operator this way
+    [...document.querySelectorAll('.dropdown')].forEach((dropdown) => {
+      // do not attach listener more than once
+      dropdown.classList.remove('dropdown');
+      const button = dropdown.querySelector('button');
+      const list = dropdown.querySelector('.dropdown-list');
+      // show the dropdown list on button click
+      dropdown.querySelector('button').addEventListener('click', (e) => {
+        list.classList.remove('hidden');
+
+        // TODO: should probably extract these styles as global snowblade props
+        button.classList.add('ring-1');
+        button.classList.add('bg-white');
+        button.classList.add('ring-gray-300');
+        button.classList.remove('bg-gray-100');
+        window.snowbladeActiveDropdown = dropdown;
+        e.stopPropagation();
+      });
+    });
+  });
+</script>
