@@ -1,0 +1,21 @@
+<meta presto name="UserDeleteModal" />
+
+<ModalWindow ::title="Are you sure?">
+  <div class="flex items-center">
+    <div
+      class="p-4"
+      x-text="`Do you really want to delete ${$store.users.selected.name} from the directory tree?`"
+    ></div>
+  </div>
+  <div class="flex p-3 border-t">
+    <div class="ml-auto">
+      <div class="flex space-x-3" x-show="!$store.users.droppingUser">
+        <BasicButton ::color="gray" @click="$store.root.modal = ''">Cancel</BasicButton>
+        <IconButton ::color="red" ::icon="trash-alt" @click="$store.users.dropSelectedUser()">Yes</IconButton>
+      </div>
+      <IconButton x-show="$store.users.droppingUser" ::color="red" ::icon="radiation" icon|class="loader-spin"
+        >Please Wait</IconButton
+      >
+    </div>
+  </div>
+</ModalWindow>

@@ -1,0 +1,10 @@
+<meta presto name="UserDetail" ::icon="phone" $$reserves="$$declared" $$provides />
+
+<div class="flex items-center h-6">
+  <div class="h-4 w-4 flex items-center">
+    <i class="fas fa-{{ icon }} text-gray-400 mx-auto"></i>
+  </div>
+  <div class="flex items-center pl-2 ml-2 border-l h-full text-gray-400">
+    <div $$accepts><slot presto></slot></div>
+  </div>
+</div>

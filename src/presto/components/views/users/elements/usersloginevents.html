@@ -1,0 +1,26 @@
+<meta presto name="UsersLoginEvents" />
+
+<div class="flex flex-col flex-1">
+  <div class="flex p-4 items-center">
+    <div class="text-2xl font-semibold">
+      <span x-show="!$store.users.loading"> Login Events </span>
+      <Placeholder class="h-6 w-24" x-show="$store.users.loading"></Placeholder>
+    </div>
+    <div class="order-1 ml-auto">
+      <Placeholder class="h-8 w-32" x-show="$store.users.loading"></Placeholder>
+      <IconButton
+        ::icon="trash-alt"
+        ::color="red"
+        x-show="!$store.users.loading"
+        @click="$store.root.modal = 'user_delete'"
+        >Delete User</IconButton
+      >
+    </div>
+  </div>
+  <div class="flex h-1 border-b mx-2"></div>
+
+  <div class="flex-grow h-0 overflow-scroll px-2 space-y-2">
+    <UsersLoginChartPlaceholder></UsersLoginChartPlaceholder>
+    <UsersLoginChart></UsersLoginChart>
+  </div>
+</div>

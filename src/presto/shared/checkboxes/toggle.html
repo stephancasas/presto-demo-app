@@ -1,0 +1,23 @@
+<meta presto name="Toggle" ::color="green" ::label ::value />
+
+<script presto>
+  function checked(arg) {
+    return arg === '' ? '' : `${arg}`;
+  }
+
+  function click(arg) {
+    return arg === '' ? '' : `${arg} = !${arg}`;
+  }
+</script>
+
+<div class="flex items-center mx-auto" @click="{{ value | click }}">
+  <div class="relative h-6 w-10 mr-2 rounded-full cursor-pointer select-none">
+    <div class="absolute inset-0 flex bg-gray-100 rounded-full">
+      <div class="h-6 w-6 bg-gray-300 rounded-full border-4 border-gray-100"></div>
+    </div>
+    <div class="absolute inset-0 flex bg-gray-100 rounded-full" $$exposes="checked" x-show="{{ value | checked}}">
+      <div class="h-6 w-6 bg-{{ color }}-400 rounded-full border-4 border-gray-100 ml-auto"></div>
+    </div>
+  </div>
+  <div><slot presto> {{ label }} </slot></div>
+</div>

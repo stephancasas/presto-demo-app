@@ -1,0 +1,17 @@
+<meta presto name="UsersSidebar" />
+
+<div class="flex flex-col w-64 border-r">
+  <div class="flex p-2 pt-3">
+    <IconInput ::icon="search" placeholder="Search..." x-model="$store.users.search"></IconInput>
+  </div>
+  <div class="flex border-t mt-1 w-full h-1"></div>
+  <div class="flex-grow h-0 overflow-scroll space-y-2 pb-2">
+    <UserThumbnail
+      $$wrap="template"
+      x-for="u in $store.users.searchResults()"
+      x-text="u.name"
+      @click="$store.users.select(u)"
+      selected|x-show="$store.users.selected.id === u.id"
+    ></UserThumbnail>
+  </div>
+</div>

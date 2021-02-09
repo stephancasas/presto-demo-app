@@ -1,0 +1,37 @@
+<meta presto name="UsersLoginChart" />
+
+<template x-if="$store.users.selected.logins.length > 0">
+  <div class="h-full w-full">
+    <canvas id="chart"></canvas>
+    <script>
+      var chart = new Chart(document.querySelector('#chart'), {
+        type: 'horizontalBar',
+        data: {
+          labels: [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+            'December'
+          ],
+          datasets: [
+            {
+              backgroundColor: 'rgb(110, 231, 183)',
+              borderColor: 'rgb(255, 99, 132)',
+              data: Spruce.store('users').selected.logins
+            }
+          ]
+        },
+
+        options: { legend: { display: false } }
+      });
+    </script>
+  </div>
+</template>

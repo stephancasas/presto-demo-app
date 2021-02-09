@@ -1,0 +1,10 @@
+<meta presto name="IconButton" ::color="green" ::icon="shopping-cart" ::label="Button" />
+
+<div
+  class="bg-{{ color }}-500 border border-{{ color }}-500 hover:bg-{{ color }}-400 text-white transition ease-in duration-200 text-center rounded-md flex items-center select-none cursor-pointer"
+>
+  <div class="flex items-center h-8 w-8 border-r border-{{ color }}-300">
+    <i class="fas fa-{{ icon }} mx-auto text-xl" $$exposes="icon"></i>
+  </div>
+  <div class="font-medium px-2"><slot presto> {{ label }} </slot></div>
+</div>

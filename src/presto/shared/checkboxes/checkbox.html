@@ -1,0 +1,26 @@
+<meta presto name="Checkbox" ::color="green" ::label ::value />
+
+<script presto>
+  function checked(arg) {
+    return arg === '' ? '' : `${arg}`;
+  }
+
+  function click(arg) {
+    return arg === '' ? '' : `${arg} = !${arg}`;
+  }
+</script>
+
+<label class="flex items-center space-x-2 mx-auto cursor-pointer" @click="{{ value | click }}">
+  <div class="bg-gray-100 h-6 w-6 rounded-md">
+    <div class="rounded-md h-6 w-6 bg-{{ color }}-400" $$exposes="checked" x-show="{{ value | checked }}">
+      <svg viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M5.707 7.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L7 8.586 5.707 7.293z"
+        />
+      </svg>
+    </div>
+  </div>
+  <span>
+    <slot presto> {{ label }} </slot>
+  </span>
+</label>

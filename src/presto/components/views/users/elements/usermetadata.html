@@ -1,0 +1,22 @@
+<meta presto name="UserMetadata" />
+
+<div class="flex order-1 ml-auto h-full items-center divide-x-12">
+  <div class="flex items-center px-4 h-full">
+    <div>
+      <div x-show="$store.users.loading" class="space-y-2">
+        <Placeholder class="h-4 w-32"></Placeholder>
+        <Placeholder class="h-4 w-32"></Placeholder>
+        <Placeholder class="h-4 w-32"></Placeholder>
+      </div>
+
+      <div x-show="$store.users.selected.name">
+        <UserDetail
+          ::icon="phone"
+          x-text="intlTelInputUtils.formatNumber($store.users.selected.phone, 'US', '')"
+        ></UserDetail>
+        <UserDetail ::icon="envelope" x-text="$store.users.selected.email.toLowerCase()"></UserDetail>
+        <UserDetail ::icon="globe" x-text="$store.users.selected.website"></UserDetail>
+      </div>
+    </div>
+  </div>
+</div>
