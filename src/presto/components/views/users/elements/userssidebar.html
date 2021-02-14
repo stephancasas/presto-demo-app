@@ -7,11 +7,11 @@
   <div class="flex border-t mt-1 w-full h-1"></div>
   <div class="flex-grow h-0 overflow-scroll space-y-2 pb-2">
     <UserThumbnail
-      $$wrap="template"
-      x-for="u in $store.users.searchResults()"
       x-text="u.name"
       @click="$store.users.select(u)"
       selected|x-show="$store.users.selected.id === u.id"
+      $$wrap="template"
+      x-for="u in $store.users.searchResults()"
     ></UserThumbnail>
   </div>
 </div>
